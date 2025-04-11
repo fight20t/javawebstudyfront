@@ -1,0 +1,37 @@
+<!-- 事件绑定的两种方式
+方式一：通过html标签的事件属性绑定
+<input type="button" onclick="on()" value="button1">
+<script>
+    function on(){
+        alert("onclick");
+    }
+</script>
+方式二：通过dom元素属性绑定
+<input type="button" id="'btn" value="button2">
+<script>
+    document.getElementById('btn').onclick=function(){
+        alert("onclick");
+    }
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="on()" value="button1">
+    <input type="button" id="btn2" value="button2">
+</body>
+<script>
+    function on(){
+        alert("button 1 is onclick");
+    }
+    document.getElementById('btn2').onclick=function(){
+        alert("button 2 is onclick");
+    }
+</script>
+</html>

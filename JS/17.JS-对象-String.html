@@ -1,0 +1,34 @@
+<!-- 创建String对象的两种方法： var str1=new String("Hello String");
+var str2="Hello String";
+length 属性：获取字符串的长度
+charAt(index) 方法：获取指定索引处的字符
+indexOf(substring) 方法：获取指定子字符串在字符串中第一次出现的位置
+trim() 方法：去掉字符串两端的空格并返回
+substring(start, end) 方法：获取字符串中指定范围的子字符串，包含起始索引，不包含结束索引 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-String</title>
+</head>
+<body>
+    <script>
+        //创建字符串对象
+        // var str1=new String("Hello String");
+        var str2="       Hello String  ";
+
+        console.log(str2);
+        //length
+        console.log(str2.length);
+        //charAt
+        console.log(str2.charAt(0));
+        //indexOf
+        console.log(str2.indexOf("o"));
+        //trim功能是去掉字符串两端的空格并返回
+        console.log(str2.trim());
+        //substring(start, end) 含头不含尾
+        console.log(str2.substring(5, 10));
+    </script>
+</body>
+</html>

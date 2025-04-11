@@ -1,0 +1,55 @@
+<!-- v-if/v-else-if/v-else：条件性地渲染某元素，判定为true时渲染，否则不渲染
+v-show：根据条件展示某元素，区别在于切换的是display属性的值 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue-快速入门</title>
+
+    <!-- 新建html页面，引入vue.js文件，使用vue.js的基本语法 -->
+    <script src="./js/vue.js"></script>
+    <!-- 到这里结束 -->
+
+</head>
+<body>
+
+    <!-- 编写视图 -->
+    <div id="app">
+        年龄<input type="text" v-model="age">经过判定，为：
+        <span v-if="age<=35">young person</span>
+        <span v-else-if="age>35&&age<60">adult</span>
+        <span v-else>old person</span>
+
+        <br><br>
+        <input type="text" v-model="age1">经过判定，为：
+        <span v-show="age1<=35">young person</span>
+        <span v-show="age1>35&&age1<60">adult</span>
+        <span v-show="age1>=60">old person</span>
+
+    </div>
+    <!-- 到这里结束 -->
+
+</body>
+<script>
+
+    // 在JS代码区域，创建vue核心对象，定义数据模型
+    //定义vue对象
+    new Vue(
+        {
+            el:"#app",
+            data:{
+                age:20,
+                age1:80
+            },
+            methods:{
+                
+                }
+            }
+        
+    )
+    //到这里结束
+    
+</script>
+</html>

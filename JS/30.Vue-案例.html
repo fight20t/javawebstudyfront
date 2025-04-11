@@ -1,0 +1,81 @@
+<!-- v-for用于列表渲染，遍历容器的元素或对象的属性 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue-快速入门</title>
+
+    <!-- 新建html页面，引入vue.js文件，使用vue.js的基本语法 -->
+    <script src="./js/vue.js"></script>
+    <!-- 到这里结束 -->
+
+</head>
+<body>
+
+    <!-- 编写视图 -->
+    <div id="app">
+        <!-- 创建一个表格，表头为编号，姓名，年龄，性别，成绩，等级 -->
+        <table border="1">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>成绩</th>
+                <th>等级</th>
+            </tr>
+            <tr v-for="(user,index) in users">
+                <td>{{index+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>
+                    <span v-if="user.gender==1">female</span>
+                    <span v-if="user.gender==2">male</span>
+                </td>
+                <td>{{user.score}}</td>
+                <td>
+                    <span v-if="user.score>=85">very good</span>>
+                    <span v-else-if="user.score>=60">good</span>
+                    <span style="color:red;" v-else>not good</span>
+                </td>
+            </tr>
+    </div>
+    <!-- 到这里结束 -->
+
+</body>
+<script>
+
+    // 在JS代码区域，创建vue核心对象，定义数据模型
+    //定义vue对象
+    new Vue(
+        {
+            el:"#app",
+            data:{
+                users:[{
+                    name:"tom",
+                    age:20,
+                    gender:1,
+                    score:79
+
+                },
+                {
+                    name:"jerry",
+                    age:21,
+                    gender:2,
+                    score:80
+                }
+
+                ]
+            },
+            methods:{
+                
+                }
+            }
+        
+    )
+    //到这里结束
+    
+</script>
+</html>

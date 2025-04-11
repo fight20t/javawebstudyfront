@@ -1,0 +1,56 @@
+<!-- html中的element对象可以通过document对象获取，而document对象是window对象的一个属性。
+document对象中提供了以下获取element对象的函数：
+通过id属性获取，返回单个element对象
+document.getElementById("id");
+通过name属性获取，返回一个element对象的集合
+document.getElementsByName("name");
+通过class属性获取，返回一个element对象的集合
+document.getElementsByClassName("class");
+通过标签名获取，返回一个element对象的集合
+document.getElementsByTagName("tagname"); -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DOM</title>
+</head>
+<br>
+    <img id="h1" src="https://www.w3school.com.cn/i/eg_bulbon.gif" ><br><br>
+    <!-- 两个<br>的作用是换行 -->
+     <div class="cls">education</div>
+    <div class="cls">school</div>
+
+    <input type="checkbox" name="hobby"> 驾驶
+    <input type="checkbox" name="hobby"> 游泳
+</body>
+<script>
+        //获取element元素
+        //通过id属性获取
+        // var h1 = document.getElementById("h1");
+        // alert(h1);
+        //通过标签获取
+        // var divs=document.getElementsByTagName("div");
+        // for(let i=0;i<divs.length;i++){
+        //     alert(divs[i]);
+        // }
+
+        // //通过name属性获取
+        // var ins = document.getElementsByName('hobby');
+        // for (let index = 0; index < ins.length; index++) {
+        //     alert(ins[i]);
+            
+        // }
+        // //通过class属性获取
+        //  var divs = document.getElementsByClassName("cls");
+        // var divs=document.getElementsByTagName("div");
+        // for(let i=0;i<divs.length;i++){
+        //     alert(divs[i]);
+        // }
+
+        //查询参考手册，属性、方法
+        var divs=document.getElementsByTagName("div");
+        var div1=divs[0];
+        div1.innerHTML="why education";
+</script>
+</html>

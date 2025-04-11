@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/axios-0.18.0.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <!-- 添加 id 为 app 的元素 -->
+    <div id="app">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>userId</th>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>completed</th>
+                </tr>
+            </thead>
+            <tr align="center" v-for="(emp, index) in emps">
+                <td>{{index + 1}}</td>
+                <td>{{emp.userId}}</td>
+                <!-- 修正拼写错误 -->
+                <td>{{emp.id}}</td>
+                <td>{{emp.title}}</td>
+                <td>
+                    <span v-if="!emp.completed">未完成</span>
+                    <span v-if="emp.completed">完成</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            // 修改为正确的元素选择器
+            el: "#app",
+            data: {
+                emps: []
+            },
+            mounted() {
+                axios.get("https://jsonplaceholder.typicode.com/todos").then(result => {
+                    // 修正数据提取方式
+                    this.emps = result.data;
+                });
+            }
+        });
+    </script>
+</body>

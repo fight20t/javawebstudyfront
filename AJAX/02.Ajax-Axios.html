@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/axios-0.18.0.js"></script>
+</head>
+<body>
+    <input type="button" value="获取数据get" onclick="get()">
+    <input type="button" value="获取数据post" onclick="post()">
+
+
+    <script>
+        function get() {
+            //通过axios发送异步请求get
+            // axios({
+            //     method:"get",
+            //     url:"https://jsonplaceholder.typicode.com/todos/1"
+            // }).then(result => {
+            //     console.log(result.data)
+            // })
+            axios.get("https://jsonplaceholder.typicode.com/todos/1")
+            .then(result => {
+                console.log(result.data)
+            })
+        }
+        function post() {
+            //通过axios发送异步请求post
+            // axios({
+            //     method:"post",
+            //     url:"https://jsonplaceholder.typicode.com/posts",
+            //     data:"id=1"
+            // }).then(result => {
+            //     console.log(result.data)
+            // })
+            axios.post("https://jsonplaceholder.typicode.com/posts", {
+                id: 1
+            }).then(result => {
+                console.log(result.data)
+            })
+        }
+    </script>
+</body>
+</html>

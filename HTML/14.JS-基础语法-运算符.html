@@ -1,0 +1,39 @@
+<!-- ==会进行类型转换，===不会进行类型转换 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-运算符</title>
+</head>
+<body>
+    <script>
+        // var age=20;
+        // var _age="20";
+        // var $age=20;
+
+        // alert(age==_age);//true
+        // alert(age===$age);//true
+        // alert(age===_age);//false
+
+        //类型转换-其他类型转化为数字
+        alert(parseInt("12"));//12
+        alert(parseInt("12a45"));//12
+        alert(parseInt("a12"));//NaN，因为非数字后面的部分会被忽略
+
+        //类型转换-其他类型转换为boolean
+        //number类型除了0和NaN以外都为true
+        //string类型除了""以外都为true
+        //object类型除了null以外都为true
+        //undefined类型为false
+        alert(Boolean(0));//false
+        alert(Boolean(null));//false
+        alert(Boolean(1));//true
+        alert(Boolean("45"));//true
+        alert(Boolean(""));//false  
+        alert(Boolean("0"));//true
+        alert(Boolean(null));//false
+        alert(Boolean(undefined));//false
+    </script>
+</body>
+</html>

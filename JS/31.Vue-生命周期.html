@@ -1,0 +1,50 @@
+<!-- v-bind 为HTML标签绑定属性值，如设置href，css样式等
+v-model 在表单元素上创建双向数据绑定 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue-快速入门</title>
+
+    <!-- 新建html页面，引入vue.js文件，使用vue.js的基本语法 -->
+    <script src="./js/vue.js"></script>
+    <!-- 到这里结束 -->
+
+</head>
+<body>
+
+    <!-- 编写视图 -->
+    <div id="app">
+        
+    </div>
+    <!-- 到这里结束 -->
+
+</body>
+<script>
+
+    // 在JS代码区域，创建vue核心对象，定义数据模型
+    //定义vue对象
+    new Vue(
+        {
+            el:"#app",
+            data:{
+               
+               
+            },
+            methods:{
+
+            },
+            mounted() {
+                alert("页面加载完成");
+            },
+
+        }
+    )
+    //到这里结束
+    
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="h1" src="https://www.w3school.com.cn/i/eg_bulbon.gif"><br><br>
+    <!-- add two bottons,one name light and one name unlight -->
+    <br>
+    <button id="light">点亮</button>
+    <button id="unlight" ">熄灭</button>
+    <br>
+    <input type=" text" name="name" id="name" value="zhangsan">
+        <br>
+        <input type="checkbox" name="hobby"> 驾驶
+        <input type="checkbox" name="hobby"> 游泳
+        <br>
+        <button id="checkall">全选</button>
+        <button id="uncheckall">反选</button>
+</body>
+<script>
+    document.getElementById('light').onclick = function () {
+        document.getElementById('h1').src = "https://www.w3school.com.cn/i/eg_bulbon.gif";
+    }
+    document.getElementById('unlight').onclick = function () {
+        document.getElementById('h1').src = "https://www.w3school.com.cn/i/eg_bulboff.gif";
+    }
+    document.getElementById('name').onfocus = function () {
+        //所有的字母被大写
+        this.value = this.value.toUpperCase();
+    }
+    document.getElementById('name').onblur = function () {
+        //所有的字母被小写
+        this.value = this.value.toLowerCase();
+    }
+    document.getElementById('checkall').onclick = function () {
+        var checkboxes = document.getElementsByName('hobby');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    }
+    document.getElementById('uncheckall').onclick = function () {
+        var checkboxes = document.getElementsByName('hobby');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }
+
+</script>
+
+</html>

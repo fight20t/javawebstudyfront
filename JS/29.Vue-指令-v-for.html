@@ -1,0 +1,46 @@
+<!-- v-for用于列表渲染，遍历容器的元素或对象的属性 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue-快速入门</title>
+
+    <!-- 新建html页面，引入vue.js文件，使用vue.js的基本语法 -->
+    <script src="./js/vue.js"></script>
+    <!-- 到这里结束 -->
+
+</head>
+<body>
+
+    <!-- 编写视图 -->
+    <div id="app">
+        <div v-for="where in addrs">{{where}}</div>
+        <br><br>
+        
+        <div v-for="(where,index) in addrs">{{index+1}}:{{where}}</div>
+    </div>
+    <!-- 到这里结束 -->
+
+</body>
+<script>
+
+    // 在JS代码区域，创建vue核心对象，定义数据模型
+    //定义vue对象
+    new Vue(
+        {
+            el:"#app",
+            data:{
+                addrs:["北京","上海","广州","深圳"]
+            },
+            methods:{
+                
+                }
+            }
+        
+    )
+    //到这里结束
+    
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vue-快速入门</title>
+
+    <!-- 新建html页面，引入vue.js文件，使用vue.js的基本语法 -->
+    <script src="./js/vue.js"></script>
+    <!-- 到这里结束 -->
+
+</head>
+<body>
+
+    <!-- 编写视图 -->
+    <div id="app">
+        
+        <input type="button" value="please click on me" v-on:click="handle">
+    </div>
+    <!-- 到这里结束 -->
+
+</body>
+<script>
+
+    // 在JS代码区域，创建vue核心对象，定义数据模型
+    //定义vue对象
+    new Vue(
+        {
+            el:"#app",
+            data:{
+                
+            },
+            methods:{
+                handle:function(){
+                    alert("you have clicked me");
+                }
+            }
+        }
+    )
+    //到这里结束
+    
+</script>
+</html>

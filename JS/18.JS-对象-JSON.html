@@ -1,0 +1,50 @@
+<!-- JSON定义：var 变量名='{"属性名":"属性值",属性名":"属性值"}';
+for example:
+var person = '{"name":"John", "age":30, "city":"New York"}';
+value的数据类型：
+数字（整数或浮点数）
+字符串（在双引号中）
+逻辑值（true或false）
+数组（在方括号中）
+对象（在大括号中）
+null（空值）
+
+JSON 字符串转为JS对象：
+var obj = JSON.parse(person);
+JSON对象转为字符串：
+var myJSON = JSON.stringify(obj); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-JSON</title>
+</head>
+<body>
+    <script>
+        // //自定义对象
+        // var user={
+        //     name:"tom",
+        //     age:10,
+        //     gender:"male",
+        //     eat(){
+        //         console.log("eat");
+        //     }
+        // }
+        // alert(user.name);
+        // user.eat();
+
+        //定义JSON
+        var person='{"name":"john","age":18,"address":["newyork","washington"]}';
+        alert(person.name);//undefined,because person is a string
+        //将JSON字符串转为对象
+        var obj=JSON.parse(person);
+        alert(obj.name);
+        obj.name="tom";
+        alert(obj.name);
+        //将对象转为JSON字符串
+        alert(JSON.stringify(obj));
+    </script>
+</body>
+</html>

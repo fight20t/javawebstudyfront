@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DOM</title>
+</head>
+<br>
+<img id="h1" src="https://www.w3school.com.cn/i/eg_bulbon.gif"><br><br>
+<!-- 两个<br>的作用是换行 -->
+<div class="cls">education</div>
+<div class="cls">school</div>
+
+<input type="checkbox" name="hobby"> 驾驶
+<input type="checkbox" name="hobby"> 游泳
+</body>
+<script>
+    //unlight the bulb
+    //change the image src
+    var img = document.getElementById("h1");
+    img.src = "https://www.w3school.com.cn/i/eg_bulboff.gif";
+
+    //add the red "very good" after the divs
+    var divs = document.getElementsByTagName("div");
+    for (let i = 0; i < divs.length; i++) {
+        const div = divs[i];
+        div.innerHTML += "<font color='red'>very good</font>";
+
+    }
+    //make all the checkboxes checked
+    var ins = document.getElementsByName("hobby");
+    for (let i = 0; i < ins.length; i++) {
+        const ins1 = ins[i];
+        ins1.checked = true;
+
+    }
+</script>
+
+</html>

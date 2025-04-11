@@ -1,0 +1,77 @@
+<!-- 常见事件：
+1. onload：页面加载完成后触发
+2.onclick：鼠标单击时触发
+3.onblur：失去焦点时触发
+4.onfocus：获得焦点时触发
+5.onsubmit：表单提交时触发
+6.onkeydown：按下键盘时触发
+7.onmouseover：鼠标悬停时触发
+8.onmouseout：鼠标移出时触发 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="load()">
+    <form action="" style="text-align:center;" onsubmit="subfn()">
+        <input type="text" name="username" onblur="bfn()" onfocus="ffn()" onkeydown="kfn()">
+        <input id="b1" type="submit" value="提交">
+        <input id="b1" type="button" value="单击事件" onclick="fn1()">
+    </form>
+    <br><br><br>
+    <table width="100%" border="1" cellspacing="0" cellpadding="0" onmouseover="over()" onmouseout="out()">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>20</td>
+            <td>女</td>
+        </tr>
+
+
+    </table>
+</body>
+<script>
+    function load() {
+        console.log("页面加载完成");
+    }
+
+    function fn1() {
+        console.log("单击事件");
+    }
+    function bfn() {
+        console.log("失去焦点");
+    }
+    function ffn() {
+        console.log("获得焦点");
+    }
+    function kfn() {
+        console.log("按下键盘");
+    }
+    function subfn() {
+        alert("表单提交");
+    }
+    function over() {
+        console.log("鼠标移入了");
+    }
+    function out() {
+        console.log("鼠标移出");
+    }
+
+
+</script>
+
+</html>

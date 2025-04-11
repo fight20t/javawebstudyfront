@@ -1,0 +1,38 @@
+<!-- window对象：属性：history,location,navigator
+方法：alert,confirm,setTimeout,setInterval
+location对象：地址栏的URL
+获取；使用window.location.href or window.location
+//设置：使用window.location.href="http://www.baidu.com" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BOM</title>
+</head>
+<body>
+    <script>
+        // //获取
+        // window.alert("hello world");
+        // //方法：
+        // //confirm对话框
+        // var flag=confirm("are you healthy?");
+        // alert(flag);
+        // //定时器：serInterval 周期性的执行某一个函数
+        // var i=0;
+        // setInterval(function(){
+        //     i++;
+        //     console.log("the timer has been running for"+i+"times");
+        // },2000);
+        //setTimeout 定时器：在指定的时间后执行某一个函数
+        // setTimeout(function(){
+        //     alert('this is a setTimeout function');
+        // },5000);
+        
+        //location对象
+        //获取地址栏的URL
+        alert(location.href);
+        location.href = "http://www.baidu.com";
+    </script>
+</body>
+</html>

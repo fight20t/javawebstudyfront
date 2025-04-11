@@ -1,0 +1,47 @@
+<!-- 超链接：a
+属性：href：指定资源访问的路径
+target：指定打开方式：_self：在当前窗口打开；_blank：在新窗口打开
+css属性：text-decoration：none：去掉下划线
+css属性：color：black：字体颜色为黑色 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>焦点访谈：中国底气 新思想夯实大国粮仓</title>
+    <style>
+        h1{
+            color:red;
+        }
+        /* 元素选择器 */
+        span{
+            color:rgba(98, 98, 126, 0.714);
+        }
+       
+        /* id选择器 */
+        #fromwhere{
+            color:rgb(12, 12, 12);
+            font-size: 20px;
+        }
+        a{
+            /* the color is black without underline; */
+            text-decoration: none;
+            color: black;
+        }
+    </style> 
+   
+</head>
+<body>
+    <img src="https://i2.sinaimg.cn/dy/deco/2012/0613/yocc20120613img01/news_logo.png" width="100px"> <a href="https://gov.sina.com.cn" target="_self">新浪政务</a>>正文
+   
+    <h1>焦点访谈：中国底气 新思想夯实大国粮仓</h1>
+    <hr>
+    <span class="cls">2023年03月02日 21:50</span>  <span class="cls" id="fromwhere"> <a href="https://news.cctv.com/2023/03/02/ARTIUCKFf9kE9eXgYE46ugx3230302.shtml" target="_blank">央视网</a> </span>
+    <hr>
+
+</body>
+</html>
+<!-- 一个元素能拥有多个类，类名之间用空格分隔。
+每个 id 在页面中必须是唯一的，一个元素只能有一个 id。
+id 选择器：特异性较高。如果 id 选择器和类选择器同时作用于一个元素，id 选择器定义的样式会覆盖类选择器的样式。 -->
