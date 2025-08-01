@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- 基于Answer.html进行修改，删减了大部分样式，便于理解 -->
+<!-- 声明文档类型，告诉浏览器这是一个 HTML5 文档 -->
+<html lang="zh-CN">
+<!-- <html> 标签是 HTML 页面最外层的标签，lang="zh-CN" 表示页面的主要语言是中文 -->
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置网页的字符编码为 UTF-8，支持中文、英文等多种字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口，保证网页在移动端设备上能自适应宽度和缩放比例 -->
+    <title>Tlias智能学习辅助系统</title>
+    <!-- 设置网页的标题，会显示在浏览器标签页上 -->
+    <style>
+      .avatar { 
+        width: 30px; 
+        height: 30px; 
+        object-fit: cover; 
+        border-radius: 50%; 
+      }
+      /* 基础表格样式 */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* 条纹效果 */
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  /* 边框效果 */
+  .table-bordered, .table-bordered th, .table-bordered td {
+    border: 1px solid #ddd;
+  }
+
+  /* 编辑按钮样式 */
+      .edit {
+        background-color: #ffc107;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 12px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      /* 删除按钮样式 */
+      .delete {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <!-- 页面主体内容开始 -->
+  <div id="container">
+    <!-- 顶栏区域，显示系统名称和退出登录按钮 -->
+    <div class="header">
+      <h1>Tlias智能学习辅助系统</h1>
+      <a href="#">退出登录</a>
+    </div>
+
+    <!-- 搜索表单区域，包含姓名、性别、职位的筛选输入框和按钮 -->
+    <form class="search-form" action="#" method="post">
+      <input type="text" name="name" placeholder="姓名" />
+      <!-- 输入框，用户可以输入要搜索的姓名 -->
+      <select name="gender">
+          <option value="">性别</option>
+          <option value="1">男</option>
+          <option value="2">女</option>
+      </select>
+      <!-- 下拉框，选择性别 -->
+      <select name="job">
+          <option value="">职位</option>
+          <option value="1">班主任</option>
+          <option value="2">讲师</option>
+          <option value="3">学工主管</option>
+          <option value="4">教研主管</option>
+          <option value="5">咨询师</option>
+      </select>
+      <!-- 下拉框，选择职位 -->
+      <button type="submit">查询</button>
+      <!-- 查询按钮，点击后会提交表单（本例未实现查询功能） -->
+      <button type="reset" class="clear">清空</button>
+      <!-- 清空按钮，点击后会清空表单内容 -->
+    </form>
+
+    <!-- 员工信息表格，使用 Vue 的 v-for 指令动态渲染数据 -->
+    <table class="table table-striped table-bordered">
+      <thead>
+          <tr>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>头像</th>
+              <th>职位</th>
+              <th>入职日期</th>
+              <th>最后操作时间</th>
+              <th>操作</th>
+          </tr>
+      </thead>
+      <tbody>
+        <!-- v-for 是 Vue 的指令，用于遍历 empList 数组，每个 emp 代表一名员工 -->
+        <tr v-for="(emp, index) in empList" :key="index">
+          <td>{{ emp.name }}</td>
+          <!-- 显示员工姓名 -->
+          <td>{{ emp.gender === 1 ? '男' : '女' }}</td>
+          <!-- 判断 gender 字段，1 显示男，2 显示女 -->
+          <td><img :src="emp.image" :alt="emp.name" class="avatar"></td>
+          <!-- :src 是 v-bind 的简写，动态绑定图片地址，:alt 绑定图片描述 -->
+          <td>
+            {{ emp.job === '1' ? '班主任' : (emp.job === '2' ? '讲师' : (emp.job === '3' ? '学工主管' : (emp.job === '4' ? '教研主管' : (emp.job === '5' ? '咨询师' : '未知')))) }}
+          </td>
+          <!-- 判断 job 字段，显示对应职位名称 -->
+          <td>{{ emp.entrydate }}</td>
+          <!-- 显示入职日期 -->
+          <td>{{ emp.updatetime }}</td>
+          <!-- 显示最后操作时间 -->
+          <td class="btn-group">
+            <button class="edit">编辑</button>
+            <!-- 编辑按钮（本例未实现功能） -->
+            <button class="delete">删除</button>
+            <!-- 删除按钮（本例未实现功能） -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 页脚版权区域 -->
+    <footer class="footer">
+      <p class="company-name">江苏传智播客教育科技股份有限公司</p>
+      <p class="copyright">版权所有 Copyright 2006-2024 All Rights Reserved</p>
+    </footer>
+
+    <!-- Vue 相关脚本区域 -->
+    <script type="module">
+      // 通过 ES Module 方式从 CDN 引入 Vue 3
+      import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+      // 使用 createApp 创建 Vue 应用实例
+      createApp({
+        data() {
+          // data 是一个函数，返回一个对象，里面定义了页面要用到的数据
+          return {
+            empList: [
+              // empList 是一个数组，包含多个员工对象，每个对象有员工的详细信息
+              { "id": 1,
+                "name": "谢逊",
+                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/4.jpg",
+                "gender": 1,
+                "job": "1",
+                "entrydate": "2023-06-09",
+                "updatetime": "2024-07-30T14:59:38"
+              },
+              {
+                "id": 2,
+                "name": "韦一笑",
+                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg",
+                "gender": 1,
+                "job": "1",
+                "entrydate": "2020-05-09",
+                "updatetime": "2023-07-01T00:00:00"
+              },
+              {
+                "id": 3,
+                "name": "黛绮丝",
+                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/2.jpg",
+                "gender": 2,
+                "job": "2",
+                "entrydate": "2021-06-01",
+                "updatetime": "2023-07-01T00:00:00"
+              }
+            ]
+          }
+        }
+      }).mount('#container')
+      // .mount('#container') 表示把 Vue 应用挂载到 id 为 container 的 div 上，这样 Vue 就能管理这个区域的内容了
+    </script>
+</div>
+  
+
+</body>
+</html>

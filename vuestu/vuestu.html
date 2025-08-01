@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 声明文档类型，告诉浏览器这是一个 HTML5 文档 -->
+
+<html lang="en">
+<!-- <html> 标签是 HTML 页面最外层的标签，lang="en" 表示页面的主要语言是英语 -->
+
+<head>
+    <!-- <head> 标签包含网页的元数据（不是页面内容），比如字符集、标题等 -->
+    <meta charset="UTF-8">
+    <!-- 设置网页的字符编码为 UTF-8，支持中文、英文等多种字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口，保证网页在移动端设备上能自适应宽度和缩放比例 -->
+    <title>Vue-Quick start</title>
+    <!-- 设置网页的标题，会显示在浏览器标签页上 -->
+</head>
+<body>
+    <!-- <body> 标签包含网页的主要内容，用户在页面上能看到的内容都放在这里 -->
+    <div id="app">
+        <!-- 这是一个 <div> 容器，id="app" 是给它取的名字，Vue 会用这个名字找到并管理这个区域 -->
+        {{message}}
+        <!-- 这是 Vue 的模板语法，双大括号 {{}} 用来显示 Vue 数据中的 message 变量 -->
+    </div>
+    <script type="module">
+        <!-- <script> 标签用来写 JavaScript 代码。type="module" 表示这是一个 ES6 模块，可以用 import/export 语法 -->
+        import{ createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        // 从 CDN（unpkg.com）上引入 Vue 3 的模块版本，解构出 createApp 方法
+
+        createApp({
+            // 调用 createApp 创建一个 Vue 应用
+            data() {
+                // data 是一个函数，返回一个对象，里面定义了页面要用到的数据
+                return {
+                    message: 'Hello, Vue!'
+                    // 定义了一个 message 属性，值为 'Hello, Vue!'
+                }
+            }
+        }).mount('#app');
+        // 把 Vue 应用挂载到 id 为 app 的 <div> 上，这样 Vue 就能管理这个区域的内容了
+    </script>
+</body>
+</html>

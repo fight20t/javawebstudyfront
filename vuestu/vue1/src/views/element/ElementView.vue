@@ -33,6 +33,7 @@
     <el-button type="text" @click="dialogTableVisible = true"
       >打开嵌套表格的 Dialog</el-button
     >
+    <br><br>
 
     <el-dialog title="收货地址" :visible.sync="dialogTableVisible">
       <el-table :data="gridData">
